@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tradelog
+    username: postgres
+    password: 8988
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# JWT 설정
+jwt:
+  secret: b2afb260fe80489ee66af7aaaba9bcf6e764c09e9ff6f7da5d6c4c9d1b27c29e
+  expiration: 86400000 # 24시간
+
+# Swagger 설정
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+
