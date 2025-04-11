@@ -1,11 +1,13 @@
 package com.tradelog.backend.repository;
 
-import com.tradelog.backend.model.Comment;
-import com.tradelog.backend.model.Journal;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import com.tradelog.backend.entity.Comment;
+import com.tradelog.backend.entity.Journal;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 public interface CommentRepository extends JpaRepository<Comment, Long> {
-    Page<Comment> findByJournalOrderByCreatedAtDesc(Journal journal, Pageable pageable);
+    List<Comment> findByJournalOrderByCreatedAtDesc(Journal journal);
 } 

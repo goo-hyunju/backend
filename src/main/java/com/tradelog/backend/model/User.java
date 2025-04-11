@@ -44,11 +44,11 @@ public class User {
     private List<Comment> comments = new ArrayList<>();
 
     @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updated_at")
+    @Column
     private LocalDateTime updatedAt;
 
     public enum UserRole {

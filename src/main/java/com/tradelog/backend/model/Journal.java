@@ -29,25 +29,25 @@ public class Journal {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(name = "stock_symbol", nullable = false)
+    @Column(nullable = false)
     private String stockSymbol;
 
-    @Column(name = "buy_date", nullable = false)
+    @Column(nullable = false)
     private LocalDate buyDate;
 
-    @Column(name = "sell_date")
+    @Column
     private LocalDate sellDate;
 
-    @Column(name = "profit_rate", nullable = false)
+    @Column(nullable = false)
     private Double profitRate;
 
-    @Column(name = "strategy_description", columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT")
     private String strategyDescription;
 
     @Column
     private String emotion;
 
-    @Column(name = "is_public", nullable = false)
+    @Column(nullable = false)
     private Boolean isPublic;
 
     @OneToMany(mappedBy = "journal", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -57,10 +57,10 @@ public class Journal {
     private AiFeedback aiFeedback;
 
     @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updated_at")
+    @Column
     private LocalDateTime updatedAt;
 } 
